@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fifa Run! - Venta de cartas especiales de fútbol élite. Sistema de Carrito de compras.">
+    <title>Fifa Run! | Cartas de Fútbol Élite</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Link para Accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <a href="#" class="header__logo" aria-label="Fifa Run! - Inicio">
+                <span class="logo__icon" aria-hidden="true">⚽</span>
+                <div class="logo__text">
+                    <span class="logo__title">FIFA RUN!</span>
+                    <span class="logo__subtitle">ÉLITE CARDS</span>
+                </div>
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Navegación principal">
+                <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                
+                <ul id="nav-menu" class="nav__menu">
+                    <li class="nav__item"><a href="#catalogo" class="nav__link">Catálogo</a></li>
+                    <li class="nav__item"><a href="#formulario" class="nav__link">Checkout</a></li>
+                </ul>
+            </nav>
+
+            <!-- Icono de Carrito en el Header -->
+            <div class="cart-widget">
+                <button id="btn-ver-carrito" class="btn btn--cart" aria-label="Ver carrito de compras">
+                    🛒 <span id="cart-count" class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main id="main-content" role="main">
+        
+        <!-- HERO SECTION -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__background" aria-hidden="true"></div>
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <span class="hero__badge">⚡ Edición Limitada 2025</span>
+                    <h1 id="hero-title" class="hero__title">
+                        Cartas de <span class="hero__title-highlight">Élite Mundial</span>
+                    </h1>
+                    <p class="hero__description">
+                        Usa nuestro nuevo sistema de carrito. Agrega tus cartas favoritas y procesa la compra en un solo clic.
+                    </p>
+                    
+                    <!-- Descripción sobre cartas especiales -->
+                    <div class="hero__features">
+                        <div class="feature-box">
+                            <h3>Sistema de Carrito</h3>
+                            <p>Agrega múltiples jugadores a tu carrito. El sistema calculará el total con IVA automáticamente al finalizar la compra.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>20 Jugadores Élite</h3>
+                            <p>Hemos expandido nuestro catálogo con las nuevas estrellas del fútbol mundial: Yamal, Bellingham, Messi y más.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero__actions">
+                        <a href="#catalogo" class="btn btn--primary">Ir al Catálogo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO -->
+        <section id="catalogo" class="section section--catalog" aria-labelledby="catalog-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__badge">Colección</span>
+                    <h2 id="catalog-title" class="section__title">Cartas Disponibles</h2>
+                </header>
+                
+                <!-- Filtros -->
+                <div class="filters" role="group" aria-label="Filtros">
+                    <div class="filter-group">
+                        <label for="filtro-posicion" class="filter-label">Posición:</label>
+                        <select id="filtro-posicion" class="filter-select">
+                            <option value="todas">Todas</option>
+                            <option value="Delantero">Delantero</option>
+                            <option value="Mediocampista">Mediocampista</option>
+                            <option value="Defensor">Defensor</option>
+                            <option value="Portero">Portero</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Contenedor Dinámico -->
+                <section id="lista-elementos" class="cards-grid" aria-label="Lista de cartas">
+                    <!-- Tarjetas generadas por JS -->
+                </section>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: PROMOCIÓN ÁLBUM -->
+        <section id="promocion-album" class="section section--promo" aria-labelledby="promo-title">
+            <div class="container promo-container">
+                <div class="promo-image">
+                    <img src="https://www.honduras.com/wp-content/uploads/2026/05/Album-del-mundial-2026--1536x864.jpg" alt="Álbum del Mundial 2026">
+                </div>
+                <div class="promo-content">
+                    <span class="section__badge">🎁 Promoción Especial</span>
+                    <h2 id="promo-title" class="section__title">¡Llévate el Álbum GRATIS!</h2>
+                    <p class="promo-description">
+                        Si el total de tu compra supera los <strong>$500.000</strong>, te llevas el <strong>Álbum del Mundial 2026</strong> completamente gratis. ¡No te pierdas esta oportunidad para completar tu colección!
+                    </p>
+                    <a href="#catalogo" class="btn btn--primary">Comprar ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO (CHECKOUT) -->
+        <section id="formulario" class="section section--form" aria-labelledby="form-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__badge">Checkout</span>
+                    <h2 id="form-title" class="section__title">Finalizar Compra</h2>
+                </header>
+                
+                <div class="checkout-container">
+                    <!-- Resumen del Carrito (Lado Izquierdo) -->
+                    <div class="checkout-summary">
+                        <h3>Tu Pedido</h3>
+                        <div id="checkout-items" class="checkout-items-list">
+                            <!-- Items del carrito se mostrarán aquí -->
+                            <p class="empty-cart-msg">Tu carrito está vacío. ¡Agrega cartas desde el catálogo!</p>
+                        </div>
+                        <div class="checkout-totals">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="checkout-subtotal">$0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>IVA (19%):</span>
+                                <span id="checkout-iva">$0</span>
+                            </div>
+                            <div class="total-row total-final">
+                                <span>Total a Pagar:</span>
+                                <span id="checkout-total">$0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Datos (Lado Derecho) -->
+                    <div class="form-container">
+                        <form id="form-compra" class="form" novalidate>
+                            <h3>Datos del Comprador</h3>
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre <span class="required">*</span></label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ej: Juan Pérez" required autocomplete="name">
+                                <span id="nombre-error" class="form-error" role="alert"></span>
+                            </div>
+                            
+                            <!-- RUT -->
+                            <div class="form-group">
+                                <label for="rut" class="form-label">RUT <span class="required">*</span></label>
+                                <input type="text" id="rut" name="rut" class="form-input" placeholder="Ej: 12345678-9" required maxlength="12">
+                                <span id="rut-error" class="form-error" role="alert"></span>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="usuario@email.com" required autocomplete="email">
+                                <span id="email-error" class="form-error" role="alert"></span>
+                            </div>
+                            
+                            <!-- Teléfono -->
+                            <div class="form-group">
+                                <label for="telefono" class="form-label">Teléfono <span class="required">*</span></label>
+                                <div class="phone-input">
+                                    <span class="phone-prefix">+56 9</span>
+                                    <input type="tel" id="telefono" name="telefono" class="form-input form-input--phone" placeholder="12345678" required maxlength="8">
+                                </div>
+                                <span id="telefono-error" class="form-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary btn--large" id="btn-pagar">Pagar Ahora</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__container">
+            <p>© 2024 Fifa Run! - Proyecto Educativo.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL CARRITO (Ventana emergente) -->
+    <div id="modal-carrito" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal__overlay"></div>
+        <div class="modal__content modal__content--cart">
+            <button class="modal__close" aria-label="Cerrar">&times;</button>
+            <h2 class="modal__title">🛒 Mi Carrito</h2>
+            
+            <div id="modal-carrito-body" class="modal-cart-body">
+                <!-- Items del carrito aquí -->
+            </div>
+            
+            <div class="modal-cart-footer">
+                <button id="btn-vaciar-carrito" class="btn btn--secondary">Vaciar Carrito</button>
+                <a href="#formulario" id="btn-checkout-modal" class="btn btn--primary">Ir a Pagar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMACIÓN -->
+    <div id="modal-confirmacion" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__icon">✅</div>
+            <h2 class="modal__title">¡Compra Exitosa!</h2>
+            <p class="modal__message" id="modal-message">Tu pedido ha sido procesado.</p>
+            <button class="btn btn--primary modal__btn" id="modal-close-btn">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
